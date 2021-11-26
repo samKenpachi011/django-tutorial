@@ -31,6 +31,17 @@
 	* models.py --> used to define model classes that communicate with the database
 	* tests.py --> writing unit tests
 	* views.py --> every data exchange needs to have a request/response thats where views comes in
- 
+**Side Note :**
+ * Projects vs. apps
+ * An app is a Web application that does something – e.g., a Weblog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects. 
+**Writing Views :**
+ * A view acts as a middle man between our models and templates they are request handlers
+ * When creating views then after they should be mapped to urls
+ * **Key variables and functions :**
+    * HttpResponse ->
+	* render() ->
+	* include() ->function allows referencing other URLconfs. 
+	* path() ->function is passed four arguments, two required: route and view, and two optional: kwargs, and name. 
+ * Views can be function based or class based
  
  
