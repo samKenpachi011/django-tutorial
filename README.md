@@ -103,5 +103,5 @@
  * A Django administrative site is represented by an instance of django.contrib.admin.sites.AdminSite; by default, an instance of this class is created as django.contrib.admin.site and you can register your models and ModelAdmin instances with it.
  * ** Not every template in contrib/admin/templates/admin may be overridden per app or per model.** 
 
-## More on View: Part 3	
+## More on Views: Part 3	
 	
