@@ -42,9 +42,14 @@
     * HttpResponse ->
 	* render() ->
 	* include() ->function allows referencing other URLconfs. 
-	* path() ->function is passed four arguments, two required: route and view, and two optional: kwargs, and name. 
- * Views can be function based or class based
- 
+	* path is passed four arguments, two required: route and view, and two optional: kwargs, and name. 
+ * Views can be class based or function based
+ * Class Views allow you to structure your views and reuse code by harnessing inheritance and mixins.
+
+**Side Note: Because Django’s URL resolver expects to send the request and associated arguments to a callable function, not a class, class-based views have an as_view() :**
+ * Link [ClassBased Views](https://docs.djangoproject.com/en/3.2/topics/class-based-views/intro/)  
+ * key term (Mixin)->Mixins are a form of multiple inheritance where behaviors and attributes of multiple parent classes can be combined. 
+ * Link [GenericViews](https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-display/)
 ## Creating Models: Part2
 **What are models and how do they fit into django:**
  * Models provide a single source of truth for our data. Allow us to define schemas  
@@ -53,7 +58,7 @@
  * Knowing about the ORM-Object Relational Mapper
  * ORM is a powerful technique in django even though it has its pitfalls. It gives us a level of abstraction which makes it easy to work with object.
  * ORM ->Let's us query and manipulate data from a database using an object oriented paradigm thus the developer does not have to write any SQL.
- * Link [ORM-Brief](https://data-flair.training/blogs/django-orm-tutorial/ https://data-flair.training/blogs/django-orm-tutorial/)
+ * Link [ORM-Brief](https://data-flair.training/blogs/django-orm-tutorial/)
 **Getting Back to Models 😃 :**
  * Each model is a python class that subclasses from django.db.models.Model 
  * The Model class has helper functions (Fields,Autofields)
@@ -66,6 +71,7 @@
  * Using the interactive shell to interact with the database API
  * using double underscore functions __str__()
  * filter,using create,delete()
+ * Link [Meta class](https://www.geeksforgeeks.org/meta-class-in-models-django/)
  
 ## Djangon Admin 
 **Note :**
@@ -76,6 +82,7 @@
  * To display models on the admin site we have to register them in the admin.py
  * The register function is used to add models to the Django admin so that data for those models can be created, deleted, updated and queried through the user interface.
  * syntax -> __*admin.site.register(<ModelName>)*__
+ 
 **Side Note :**
  * The ModelAdmin class is the representation of a model in the admin interface 
  * One can register multiple models using the register decoration
@@ -94,14 +101,33 @@
 	* list_filter 
 	* radio_fields
  * There are also custom template options to override or extend the default admin templates	
- * ** InlineModelAdmin objects :**
+ * **InlineModelAdmin objects :**
     * This class allows us to edit a model on the same page as a parent model.
 	* InlineModelAdmin shares many of the same features as ModelAdmin, and adds some of its own (the shared features are actually defined in the BaseModelAdmin superclas
 	* There are 2 subclasses: TabularInline, StackedInline
  * Overriding admin templates
  * Some changes need for a AdminSite instance to be created.
  * A Django administrative site is represented by an instance of django.contrib.admin.sites.AdminSite; by default, an instance of this class is created as django.contrib.admin.site and you can register your models and ModelAdmin instances with it.
- * ** Not every template in contrib/admin/templates/admin may be overridden per app or per model.** 
+ * **Not every template in contrib/admin/templates/admin may be overridden per app or per model.** 
 
 ## More on Views: Part 3	
+**Covered :**
+ * A view is a “type” of Web page in your Django application that generally serves a specific function and has a specific template.
+ * To get from a URL to a view, Django uses what are known as ‘URLconfs’. A URLconf maps URL patterns to views.->for example: /newsarchive/<year>/<month>/.
+ * **Views are responsible for mainly two things :**
+    * Returning an HttpResponse
+	* Raising an Exception
 	
+ * **TEMPALTES [templates](https://docs.djangoproject.com/en/3.2/topics/templates/) -> are a way of separating design from python code:There are four constructs  of the Django Template Language:**	
+    * tags
+	* variables 
+	* filters
+	* comments
+	
+## Cutting Down Code: Part 4	
+**Covered :**
+ * Updating the templates and adding forms
+ * CSRF token (Cross Site Request Forgeries)
+ * request.POST is a dictionary-like object that lets you access submitted data by key name.
+ * Using the HttpResponseRedirect which takes a single argument: the URL to which the user will be redirected
+ * Using ListView and DetailView. Respectively, those two views abstract the concepts of “display a list of objects” and “display a detail page for a particular type of object.”	
