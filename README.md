@@ -131,3 +131,28 @@
  * request.POST is a dictionary-like object that lets you access submitted data by key name.
  * Using the HttpResponseRedirect which takes a single argument: the URL to which the user will be redirected
  * Using ListView and DetailView. Respectively, those two views abstract the concepts of “display a list of objects” and “display a detail page for a particular type of object.”	
+ 
+## Testing : Part 5 
+**Covered :**
+ * Tests are ways to check the behaviour of our code in terms of returning the expected output
+ * Tests help to identify problems in our code and help prevent them
+ * Tests can have many strategies for one [TDD in Django](https://medium.com/the-andela-way/test-driven-development-with-django-ccb179171dcd)
+ * Django has test tools to help in writting tests [TestingTools](https://docs.djangoproject.com/en/3.1/topics/testing/tools/#django.test.TestCase)
+ * **Testing tools :**
+    * Setting up the test environment using setup_test_environment() which installs a template renderer which will allow us to examine some additional attributes on responses.
+    * Test Client ->simulate a user interacting with the code at the view level(simulate GET/POST requests on a URL and observe the response)
+ * **Best Practices :**
+    * Have a separate TestClass for each model or view
+	* Have a separate test method for each set of conditions you want to test
+	* Have test method names that describe their function
+	* [Writing and running tests](https://docs.djangoproject.com/en/3.1/topics/testing/overview/)
+	* [Advanced Topics](https://docs.djangoproject.com/en/3.1/topics/testing/advanced/)
+
+## Break 😫
+
+## Customizing the app’s look and feel: Part 6
+**Covered :**
+ * Static files ->Images,Css,JavaScript necessary to render the complete web page.
+ * Django.contrib.staticfiles ->it collects static files from each of your applications into a single location that can easily be served in production.
+ * Creating a static dir to hold static files
+ * Using the load static tag to load static files.
