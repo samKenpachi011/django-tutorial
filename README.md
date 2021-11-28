@@ -2,9 +2,15 @@
 ** Understanding django**
 
 ## What is Django
+**Django is a fullstack open source framework which by default offers necessary features for fast web development.
+**Automatically sets up default configurations for example database configurations
 
-## Why Django
+* **Why Django :**
+   * Its open source
+   * Allows for logic to be written directly on the html
+   * Shipped with optional tools (modules + packages) to solve web development issues
 
+* Link [Key parts of Django](https://docs.djangoproject.com/en/2.1/topics/)
 ## Django vs Other frameworks
 
 **Covered :**
@@ -50,6 +56,7 @@
  * Link [ClassBased Views](https://docs.djangoproject.com/en/3.2/topics/class-based-views/intro/)  
  * key term (Mixin)->Mixins are a form of multiple inheritance where behaviors and attributes of multiple parent classes can be combined. 
  * Link [GenericViews](https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-display/)
+
 ## Creating Models: Part2
 **What are models and how do they fit into django:**
  * Models provide a single source of truth for our data. Allow us to define schemas  
@@ -147,6 +154,7 @@
 	* Have test method names that describe their function
 	* [Writing and running tests](https://docs.djangoproject.com/en/3.1/topics/testing/overview/)
 	* [Advanced Topics](https://docs.djangoproject.com/en/3.1/topics/testing/advanced/)
+* Link [Basics of TDD and Django](https://www.obeythetestinggoat.com/book/part1.harry.html)
 
 ## Break 😫
 
@@ -156,3 +164,14 @@
  * Django.contrib.staticfiles ->it collects static files from each of your applications into a single location that can easily be served in production.
  * Creating a static dir to hold static files
  * Using the load static tag to load static files.
+ 
+## Customizing the admin site: Part 7
+**Covered :**
+ * Reordering the fields on the edit form. 
+ * Spliting the form up into fieldsets
+ * Adding models into one page by using admin.ModelAdmin inline option.
+ * Using the list_display() to display text
+ * Using list_filter to add a filter siderbar
+ * Using search_fields to search terms. Django uses it uses a LIKE query behind the scenes which makes it easier for your database to do the search.
+ 
+:checkered_flag::checkered_flag:
